@@ -96,12 +96,12 @@ var createdWorkItem = await client.WorkItems.CreateWorkItemAsync(workItemModel);
 Most of the code in this repository was automatically generated with [NSwag](https://github.com/RicoSuter/NSwag).
 Nevertheless you can help to develop the project. Any contributions are **greatly appreciated**.
 
-* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/testgear-tms/dotnet-rest-client/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
+* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/testgear-tms/api-client-dotnet/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
 * Please make sure you check your spelling and grammar.
 * Create individual PR for each suggestion.
-* Please also read through the [Code Of Conduct](https://github.com/testgear-tms/dotnet-rest-client/blob/master/CODE_OF_CONDUCT.md) before posting your first idea as well.
+* Please also read through the [Code Of Conduct](https://github.com/testgear-tms/api-client-dotnet/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
 
 # License
 
-Distributed under the Apache-2.0 License. See [LICENSE](https://github.com/testgear-tms/dotnet-rest-client/blob/master/LICENSE.md) for more information.
+Distributed under the Apache-2.0 License. See [LICENSE](https://github.com/testgear-tms/api-client-dotnet/blob/main/LICENSE.md) for more information.
 
