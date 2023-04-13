@@ -1,0 +1,27 @@
+name: Validate
+
+on:
+  pull_request
+
+env:
+  PROJECT_DIR: ./src/TestGear.Client
+  VALIDATION: 1
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.PROJECT_DIR }}
+
+      - name: Build project
+        run: dotnet build --no-restore ${{ env.PROJECT_DIR }}

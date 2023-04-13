@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  release:
+    types:
+      - released
+
+env:
+  PROJECT_DIR: ./src/TestGear.Client
+  NUGET_DIR: ./nuget
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.PROJECT_DIR }}
+
+      - name: Build project
+        run: |
+          dotnet build --configuration Release \
+          --no-restore ${{ env.PROJECT_DIR }}
+
+      - name: Create NuGet package
+        run: |
+          dotnet pack --configuration Release \
+          --no-build --output ${{ env.NUGET_DIR }} \
+          ${{ env.PROJECT_DIR }}
+
+      - name: Save artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: NuGet-package
+          path: ${{ env.NUGET_DIR }}/*.nupkg
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: NuGet-package
+          path: ${{ env.NUGET_DIR }}
+
+      - name: Publish to NuGet.org
+        run: |
+          dotnet nuget push ${{ env.NUGET_DIR }}/*.nupkg \
+          --skip-duplicate \
+          --source https://api.nuget.org/v3/index.json \
+          --api-key ${{ secrets.NUGET_KEY }}
+
+      - name: Publish to GitHub Packages
+        run: |
+          dotnet nuget push ${{ env.NUGET_DIR }}/*.nupkg \
+          --skip-duplicate \
+          --source https://nuget.pkg.github.com/testgear-tms/index.json \
+          --api-key ${{ secrets.GITHUB_TOKEN }}
