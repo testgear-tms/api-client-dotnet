@@ -1,11 +1,10 @@
-# TestGear.Client.Model.DateRangeModel
+# TestGear.Client.Model.ApiV2AttachmentsPostRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**From** | **DateTime?** | Minimum date and time | [optional] 
-**To** | **DateTime?** | Maximum date and time | [optional] 
+**File** | [**FileParameter**](FileParameter.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

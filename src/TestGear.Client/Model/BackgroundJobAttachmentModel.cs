@@ -27,35 +27,41 @@ using OpenAPIDateConverter = TestGear.Client.Client.OpenAPIDateConverter;
 namespace TestGear.Client.Model
 {
     /// <summary>
-    /// DateRangeModel
+    /// BackgroundJobAttachmentModel
     /// </summary>
-    [DataContract(Name = "DateRangeModel")]
-    public partial class DateRangeModel : IEquatable<DateRangeModel>, IValidatableObject
+    [DataContract(Name = "BackgroundJobAttachmentModel")]
+    public partial class BackgroundJobAttachmentModel : IEquatable<BackgroundJobAttachmentModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DateRangeModel" /> class.
+        /// Initializes a new instance of the <see cref="BackgroundJobAttachmentModel" /> class.
         /// </summary>
-        /// <param name="from">Minimum date and time.</param>
-        /// <param name="to">Maximum date and time.</param>
-        public DateRangeModel(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        /// <param name="id">id.</param>
+        /// <param name="name">name.</param>
+        /// <param name="type">type.</param>
+        public BackgroundJobAttachmentModel(Guid id = default(Guid), string name = default(string), string type = default(string))
         {
-            this.From = from;
-            this.To = to;
+            this.Id = id;
+            this.Name = name;
+            this.Type = type;
         }
 
         /// <summary>
-        /// Minimum date and time
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>Minimum date and time</value>
-        [DataMember(Name = "from", EmitDefaultValue = true)]
-        public DateTime? From { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
-        /// Maximum date and time
+        /// Gets or Sets Name
         /// </summary>
-        /// <value>Maximum date and time</value>
-        [DataMember(Name = "to", EmitDefaultValue = true)]
-        public DateTime? To { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,9 +70,10 @@ namespace TestGear.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DateRangeModel {\n");
-            sb.Append("  From: ").Append(From).Append("\n");
-            sb.Append("  To: ").Append(To).Append("\n");
+            sb.Append("class BackgroundJobAttachmentModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +94,15 @@ namespace TestGear.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DateRangeModel);
+            return this.Equals(input as BackgroundJobAttachmentModel);
         }
 
         /// <summary>
-        /// Returns true if DateRangeModel instances are equal
+        /// Returns true if BackgroundJobAttachmentModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of DateRangeModel to be compared</param>
+        /// <param name="input">Instance of BackgroundJobAttachmentModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DateRangeModel input)
+        public bool Equals(BackgroundJobAttachmentModel input)
         {
             if (input == null)
             {
@@ -103,14 +110,19 @@ namespace TestGear.Client.Model
             }
             return 
                 (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -123,13 +135,17 @@ namespace TestGear.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.From != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.From.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.To != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.To.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Type != null)
+                {
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
                 return hashCode;
             }

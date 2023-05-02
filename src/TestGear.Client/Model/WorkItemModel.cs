@@ -75,7 +75,7 @@ namespace TestGear.Client.Model
         /// <param name="createdById">createdById.</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="globalId">globalId.</param>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="sectionId">sectionId.</param>
         /// <param name="description">description.</param>
         /// <param name="state">state (required).</param>
@@ -91,6 +91,7 @@ namespace TestGear.Client.Model
         public WorkItemModel(Guid versionId = default(Guid), long medianDuration = default(long), bool isDeleted = default(bool), Guid projectId = default(Guid), WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), bool isAutomated = default(bool), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), int versionNumber = default(int), List<IterationModel> iterations = default(List<IterationModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<StepModel> steps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagShortModel> tags = default(List<TagShortModel>), List<LinkModel> links = default(List<LinkModel>), string name = default(string))
         {
             this.EntityTypeName = entityTypeName;
+            this.Id = id;
             this.State = state;
             this.Priority = priority;
             // to ensure "steps" is required (not null)
@@ -151,7 +152,6 @@ namespace TestGear.Client.Model
             this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.GlobalId = globalId;
-            this.Id = id;
             this.SectionId = sectionId;
             this.Description = description;
             this.Duration = duration;
@@ -259,7 +259,7 @@ namespace TestGear.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
