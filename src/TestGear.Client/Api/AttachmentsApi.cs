@@ -93,7 +93,7 @@ namespace TestGear.Client.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -104,7 +104,7 @@ namespace TestGear.Client.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -200,7 +200,7 @@ namespace TestGear.Client.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -212,7 +212,7 @@ namespace TestGear.Client.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -840,7 +840,7 @@ namespace TestGear.Client.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -852,7 +852,7 @@ namespace TestGear.Client.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -900,7 +900,7 @@ namespace TestGear.Client.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -913,7 +913,7 @@ namespace TestGear.Client.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestGear.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>

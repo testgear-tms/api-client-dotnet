@@ -43,7 +43,8 @@ namespace TestGear.Client.Model
         /// <param name="id">Unique ID of the project (required).</param>
         /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project (required).</param>
-        public ProjectPutModel(Guid id = default(Guid), string description = default(string), string name = default(string))
+        /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
+        public ProjectPutModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool? isFavorite = default(bool?))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -53,6 +54,7 @@ namespace TestGear.Client.Model
             }
             this.Name = name;
             this.Description = description;
+            this.IsFavorite = isFavorite;
         }
 
         /// <summary>
@@ -77,6 +79,13 @@ namespace TestGear.Client.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Indicates if the project is marked as favorite
+        /// </summary>
+        /// <value>Indicates if the project is marked as favorite</value>
+        [DataMember(Name = "isFavorite", EmitDefaultValue = true)]
+        public bool? IsFavorite { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -87,6 +96,7 @@ namespace TestGear.Client.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,6 +146,11 @@ namespace TestGear.Client.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.IsFavorite == input.IsFavorite ||
+                    (this.IsFavorite != null &&
+                    this.IsFavorite.Equals(input.IsFavorite))
                 );
         }
 
@@ -159,6 +174,10 @@ namespace TestGear.Client.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.IsFavorite != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsFavorite.GetHashCode();
                 }
                 return hashCode;
             }

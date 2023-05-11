@@ -99,8 +99,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Attachment file was deleted successfully |  -  |
 | **422** | Attachment file is already in use |  -  |
+| **204** | Attachment file was deleted successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -311,7 +311,7 @@ This endpoint does not need any parameter.
 
 Upload new attachment file
 
-File size is restricted to 1 GB (1 073 741 824 bytes)
+File size is restricted to 50 MB (52 428 800 bytes)
 
 ### Example
 ```csharp
@@ -402,9 +402,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
+| **403** | Forbidden |  -  |
 | **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
